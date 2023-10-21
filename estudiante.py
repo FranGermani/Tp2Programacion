@@ -13,5 +13,5 @@ class Estudiante(Usuario):
     def __str__(self) -> str:
         return f"""{super().__str__()} \nLegajo:{self.__legajo} \nAño de inscripcion: {self.__anioInscripvion} \nCursando: {self.__cursos}"""
     
-    def matricularEnCurso (curso:Curso):
+    def matricularEnCurso (self, curso:Curso):
         pass

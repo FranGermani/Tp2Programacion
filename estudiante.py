@@ -15,3 +15,6 @@ class Estudiante(Usuario):
     
     def matricularEnCurso (self, curso:Curso):
         pass
+    
+    def validarCredenciales(self, email: str, contrasenia: str):
+        return super().validarCredenciales(email, contrasenia)

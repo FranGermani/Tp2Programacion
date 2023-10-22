@@ -16,3 +16,6 @@ class Profesor(Usuario):
     
     def dictarCurso (self, curso:Curso):
         pass
+    
+    def validarCredenciales(self, email: str, contrasenia: str):
+        return super().validarCredenciales(email, contrasenia)

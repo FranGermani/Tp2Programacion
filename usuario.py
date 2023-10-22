@@ -13,5 +13,9 @@ class Usuario (ABC):
     
     @abstractmethod
     def validarCredenciales(self,email: str,contrasenia: str):
-        pass
+        if email == self.__email and contrasenia== self.__contrasenia:
+            return True
+        else:
+            return False
+        
         

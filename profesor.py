@@ -14,8 +14,9 @@ class Profesor(Usuario):
     def __str__(self) -> str:
         return f"""{super().__str__()} \n Titulo:{self.__titulo} \n Año egreso:{self.__anioEgreso} \n curso: {self.__Cursos}"""
     
-    def dictarCurso (self, curso:Curso):
-        pass
+    def dictarCurso(self, curso: Curso):
+        self.__Cursos.append(curso)
+    
     
     def validarCredenciales(self, email: str, contrasenia: str):
         return super().validarCredenciales(email, contrasenia)

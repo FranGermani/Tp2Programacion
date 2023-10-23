@@ -4,10 +4,19 @@ from submenuprofe import submenuProfesor
 from profesor import Profesor
 from estudiante import Estudiante
 from usuario import Usuario
+from curso import *
+
 
 alumnos = []
 profesores = []
 cursos = []
+
+
+nombres_de_cursos = ["Programación I", "Programación II", "Programación III","Ingles I", "Ingles II","Matemática","Laboratorio I", "Laboratorio II", "Laboratorio III", "Laboratorio IV","Sistema de Procesamiento de Datos","Arquitectura y Sistemas Operativos","Metodologia de la Investigacion","Organizacion Contable de la Empresa","Organizacion Empresarial","Elementos de Investigación Operativa","Legislacion","Diseño y Administracion de Bases de Datos","Metodologias de Sistemas"]
+
+for nombre_curso in nombres_de_cursos:
+    curso = Curso(nombre_curso)
+    cursos.append(curso)
 
 alumnos.append(Estudiante("francisco", "germani","franciscogermani@hotmail.com", "123", 213213, 1998))
 profesores.append(Profesor("Mechi", "Nomeacuerdoperdon","tampoco@hotmail.com", "213", "programadora", 1998))
@@ -41,7 +50,7 @@ while opcion != "salir":
                     break
 
             if estudiante is not None:
-                subMenuAlumno(estudiante)
+                subMenuAlumno(estudiante, cursos)
             else:
                 print("Error de ingreso")
         elif int(opt) == 2:
@@ -54,11 +63,14 @@ while opcion != "salir":
                     break
 
             if profesor is not None:
-                submenuProfesor(profesor)
+                submenuProfesor(profesor, cursos,)
             else:
                 print("Error de ingreso")
         elif int(opt) == 3:
-            print("asd")
+              print("Lista de Cursos:")
+              sorted_cursos = sorted(cursos, key=lambda curso: curso._Curso__nombre)
+              for curso in sorted_cursos:
+                  print(f"Materia: {curso._Curso__nombre} Carrera: Tecnicatura Universitaria en Programacion")
         elif int(opt) == 4:
             opcion = "salir"
         else:
